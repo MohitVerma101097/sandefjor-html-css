@@ -1,0 +1,165 @@
+/* default styles */
+:root {
+  --bg: #cedef2;
+  --txtMain: #3587f2;
+  --txtLogo: #bc35f2;
+  --txtWhite: #ffffff;
+  --linearGradientLeft: linear-gradient(to left, aqua, blueviolet);
+  --linearGradientRight: linear-gradient(to right, aqua, blueviolet);
+  --linearButton: linear-gradient(to left, rgb(255, 35, 255), blueviolet);
+}
+  
+* {
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+}
+
+/* header styles */
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  min-width: 100%;
+  min-height: 10vh;
+  background: var(--bg);
+  align-items: center;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: var(--linearGradientLeft);
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: var(--linearGradientRight);
+}
+
+.logo {
+  color: var(--txtMain);
+  font-size: 2rem;
+  padding-left: 1.5rem;
+}
+
+.logo span {
+  color: var(--txtLogo);
+}
+
+nav li {
+  display: inline-block;
+  font-size: 2rem;
+  padding: 1.5rem;
+}
+
+li a {
+  list-style-type: none;
+  text-decoration: none;
+  color: var(--txtMain);
+  transition: color 0.5s;
+}
+
+li a:hover {
+  color: var(--txtLogo);
+}
+
+/* main styles */
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 84vh;
+}
+
+.contact {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background: url(/asset/img/horse-6.png) center/cover no-repeat fixed;
+  padding: 10rem 0;
+}
+
+.contact-form {
+  background-color: rgb(206, 222, 242, 0.8);
+  padding: 2rem;
+  border-radius: 5%;
+  border: solid 2px var(--txtLogo);
+  text-align: center;
+}
+
+.button-1 {
+  height: 2.5rem;
+  background: var(--linearButton);
+  border: none;
+  padding: 0 2rem 0 2rem;
+  color: var(--txtWhite);
+}
+
+/*footer styles*/
+
+footer h4 {
+  color: var(--txtWhite);
+  font-size: 1.1rem;
+}
+
+button {
+  background: var(--linearButton);
+  border-radius: 5%;
+  border: none;
+  color: var(--txtWhite);
+  padding: 0.3rem 0.5rem;
+}
+
+button:active {
+  box-shadow: 2px 2px rgb(0, 0, 0);
+}
+
+input {
+  padding: 0.3rem 0.5rem;
+}
+
+footer {
+  bottom: 0;
+  text-align: center;
+  background: var(--linearGradientLeft);
+}
+
+/* responsive layout for contact 768px and 375px */
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: grid;
+    justify-content: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  nav li {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .logo {
+    padding-top: 1rem;
+  }
+  nav li {
+    font-size: 1.4rem;
+  }
+}
